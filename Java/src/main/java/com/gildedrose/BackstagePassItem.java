@@ -16,10 +16,10 @@ class BackstagePassItem extends UpdatableItem {
             increaseQuality();
         }
 
-        item.sellIn--;
+        decreaseSellIn();
 
-        if (item.sellIn < 0) {
-            item.quality = 0;
+        if (isExpired()) {
+            resetQuality();
         }
     }
 }

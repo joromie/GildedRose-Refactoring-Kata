@@ -8,9 +8,9 @@ class AgedBrieItem extends UpdatableItem {
     @Override
     public void update() {
         increaseQuality();
-        item.sellIn--;
+        decreaseSellIn();
 
-        if (item.sellIn < 0) {
+        if (isExpired()) {
             increaseQuality();
         }
     }

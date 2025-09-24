@@ -8,9 +8,9 @@ class NormalItem extends UpdatableItem {
     @Override
     public void update() {
         decreaseQuality();
-        item.sellIn--;
+        decreaseSellIn();
 
-        if (item.sellIn < 0) {
+        if (isExpired()) {
             decreaseQuality();
         }
     }
